@@ -19,8 +19,8 @@ class Kriteria extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('stat' != 'login') or $this->session->userdata('ha') != 'peternakayam') {
-			redirect('login', 'refresh');
+		if ($this->session->userdata('stat' != 'Login') or $this->session->userdata('ha') != 'peternakayam') {
+			redirect('Login', 'refresh');
 		} else {
 			$this->load->model('crud');
 			$this->load->model('AHP');
@@ -149,7 +149,7 @@ class Kriteria extends CI_Controller
 
 		/*	$this->pre($data);
 		die;*/
-		
+
 		arsort($ahp);
 		$nett = array();
 		$rank = 1;
@@ -416,7 +416,7 @@ class Kriteria extends CI_Controller
 
 			//get table
 			'nama_alternatif' => $this->Mod_alternatif->get_group(),
-			
+
 			'url' => 'background-image: url("../../assets/images/back5.png");',
 		);
 
@@ -426,12 +426,12 @@ class Kriteria extends CI_Controller
 		#$this->pre($ahp);
 		#die;
 
-		
+
 
 		#$this->pre($data['nilai_awal']);
 		#die;
 
-		
+
 
 
 

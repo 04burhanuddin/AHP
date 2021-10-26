@@ -77,7 +77,7 @@
                     </ul>
                 </li>
             <?php endif; ?>
-            <li><a href="<?php echo site_url('login/logout'); ?>"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+            <li><a href="<?php echo site_url('Login/logout'); ?>"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
@@ -85,4 +85,3 @@
 
     <div class="container" style="padding: 100px;">
         <div class=" col-lg-12 col-lg-offset-1 ">
-          

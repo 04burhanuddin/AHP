@@ -8,7 +8,7 @@ class Admin extends CI_Controller
 	{
 		parent::__construct();
 		if (empty($this->session->userdata('stat'))) {
-			redirect('login', 'refresh');
+			redirect('Login', 'refresh');
 		} else {
 
 			$this->load->model('crud');
@@ -83,18 +83,18 @@ class Admin extends CI_Controller
 
 		if (!empty($cek)) {
 			$this->session->set_flashdata('msg', '<script>alert("USERNAME TELAH TERPAKAI !")</script>');
-			redirect('admin', 'refresh');
+			redirect('Admin', 'refresh');
 		} else {
 			$query = $this->Mod_admin->up_user($data, $id);
 
 			if ($query == true) {
 
 				$this->session->set_flashdata('msg', '<script>alert("BERHASIL UPDATE")</script>');
-				redirect('admin', 'refresh');
+				redirect('Admin', 'refresh');
 			} else {
 
 				$this->session->set_flashdata('msg', '<script>alert("GAGAL")</script>');
-				redirect('admin', 'refresh');
+				redirect('Admin', 'refresh');
 				//var_dump($query);
 			}
 		}

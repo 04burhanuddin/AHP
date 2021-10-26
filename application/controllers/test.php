@@ -19,8 +19,8 @@ class Test extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('stat' != 'login') or $this->session->userdata('ha') != 'peternakayam') {
-			redirect('login', 'refresh');
+		if ($this->session->userdata('stat' != 'Login') or $this->session->userdata('ha') != 'peternakayam') {
+			redirect('Login', 'refresh');
 		} else {
 			$this->load->model('crud');
 			$this->load->model('AHP');

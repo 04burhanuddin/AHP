@@ -13,7 +13,7 @@ class Login extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('login');
+		$this->load->view('Login');
 		$this->session->sess_destroy();
 	}
 
@@ -28,7 +28,7 @@ class Login extends CI_Controller
 
 		$cek = $this->m_login->cek_login('pengguna', $where)->num_rows(); //cheking proses when there an exist id
 		$query = $this->m_login->cek_login('pengguna', $where)->row();
-		//getting some data from table login
+		//getting some data from table Login
 
 		#proses cheking while data is already exist
 		if ($cek > 0) // is data avaible ?
@@ -36,7 +36,7 @@ class Login extends CI_Controller
 			if ($query->role == 'peternakayam') {
 				$data_session = array(
 					'nama' => $query->nama_lengkap,
-					'stat' => 'login',
+					'stat' => 'Login',
 					'ha' => $query->role,
 				);
 				$this->session->set_userdata($data_session);
@@ -44,11 +44,11 @@ class Login extends CI_Controller
 			} else {
 				$data_session = array(
 					'nama' => $query->nama_lengkap,
-					'stat' => 'login',
+					'stat' => 'Login',
 					'ha' => $query->role,
 				);
 				$this->session->set_userdata($data_session);
-				redirect('admin', 'refresh');
+				redirect('Admin', 'refresh');
 			}
 		} else {
 			$this->session->set_flashdata(
@@ -58,7 +58,7 @@ class Login extends CI_Controller
 				<h4>Ooops... ! ! ! USER ATAU PASSWORD SALAH</h4>
 				</div>'
 			);
-			redirect('login', 'refresh');
+			redirect('Login', 'refresh');
 		}
 	}
 
@@ -68,7 +68,7 @@ class Login extends CI_Controller
 		$data = array(
 			'alert' => $this->session->flashdata('Berhasil Logout')
 		);
-		redirect('login', 'refresh', $data);
+		redirect('Login', 'refresh', $data);
 	}
 }
 

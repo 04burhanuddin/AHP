@@ -20,7 +20,7 @@ class Peternakayam extends CI_Controller
 	{
 		parent::__construct();
 		if (empty($this->session->userdata('stat'))) {
-			redirect('login', 'refresh');
+			redirect('Login', 'refresh');
 		} else {
 
 			$this->load->model('crud');

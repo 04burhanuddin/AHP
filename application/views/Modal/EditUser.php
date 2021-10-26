@@ -19,7 +19,7 @@
 		)
 	);
 
-	echo form_open('admin/edit_user/' . $data->id);
+	echo form_open('Admin/edit_user/' . $data->id);
 	echo form_label('Nama', 'nama_lengkap');
 	echo form_input('nama_lengkap', $data->nama_lengkap, $att_input['nama_lengkap']);
 	echo form_label('Username', 'username');

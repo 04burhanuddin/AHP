@@ -22,7 +22,7 @@ class Alternatif extends CI_Controller
 	{
 		parent::__construct();
 		if (empty($this->session->userdata('nama'))) {
-			redirect('login', 'refresh');
+			redirect('Login', 'refresh');
 		} else {
 
 			$this->load->model('crud');
@@ -65,7 +65,7 @@ class Alternatif extends CI_Controller
 			'bibit' => $this->db->get('alternatif')->result(),
 			'kriteria' => $this->db->get('kriteria')->result(),
 			'data' => $this->db->query('SELECT *, nilai_awal.id as idnilai from nilai_awal, alternatif WHERE alternatif.id = nilai_awal.id_alternatif')->result(),
-			'url'=> 'background-image: url("../../assets/images/back5.png");',
+			'url' => 'background-image: url("../../assets/images/back5.png");',
 		);
 
 		$this->load->view('Header', $data, FALSE);
@@ -197,7 +197,7 @@ class Alternatif extends CI_Controller
 			'alke' => $this->crud->alternatif(),
 			'kriteria' => $this->db->get_where('kriteria', 'id="' . $id . '"')->row(),
 			'input' => $this->input->post('kriteria'),
-			'url'=> 'background-image: url("../../assets/images/back5.png");',
+			'url' => 'background-image: url("../../assets/images/back5.png");',
 		);
 
 		$ahp = $this->AHP->perbandingan_alternatif($data['alke'], $input);
